@@ -1,0 +1,48 @@
+# RUN configuration
+version: '3.3'
+
+volumes:
+  db:
+    driver: local
+services:
+  db:
+    image: postgres
+    restart: unless-stopped
+    container_name: pg
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=northwind
+    volumes:
+      - db:/var/lib/postgresql/db
+      - ./db/northwind.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    ports:
+      - "5432:5432"
+  adminer:
+    image: adminer
+    restart: always
+    container_name: adm
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+
+  app:
+    image: valknutt/docker_postgres_psycopg2:1.0
+    container_name: app
+    restart: on-failure
+    # specify image source
+    build:
+      context: .
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: northwind
