@@ -15,9 +15,17 @@ cur = conn.cursor()
 
 # Query the database
 if cur:
-
-    cur.execute("SELECT * FROM orders LIMIT 5;")
-    # cur.execute("SELECT * FROM students LIMIT 5;")
+    "How many units of products are on sale by product category in price equivalent. Show those that are more expensive than 5000"
+    cur.execute(
+         """SELECT category_name, sum(unit_price * units_in_stock)
+            FROM products
+            INNER JOIN categories ON products.category_id = categories.category_id
+            WHERE discontinued  <> 1
+            GROUP BY category_name
+            HAVING sum(unit_price * units_in_stock) > 5000
+            ORDER BY sum(unit_price * units_in_stock) desc
+            LIMIT 5;"""
+    )
     conn.commit()
     rows = cur.fetchall()
     for row in rows:
