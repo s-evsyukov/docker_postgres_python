@@ -41,7 +41,7 @@ Show those that are more expensive than 5000*
 6. [*Download Northwind*][5] database sample to *./db* directory 
 7. [*Creating Dockerfile*][6] to configure `Docker image` run steps
 8. [*Creating Docker-compose.yaml*][7] to configure `Docker container` infrastructure
-    * setting `Postgres` configuration
+    * setting `Postgres` configuration with initialisation.db values(Northwind will be initialised at startup of database)
     * setting `Adminer` configuration 
     * setting Custom App configuration
     * `Docker-compose` will create default network to provide connection between application.
