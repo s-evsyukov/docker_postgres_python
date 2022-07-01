@@ -25,16 +25,18 @@ Show those that are more expensive than 5000*
 
 2. Configure Docker access:
  * add docker to group
- > $ sudo groupadd docker 
-
+```shell
+$ sudo groupadd docker 
+```
  * add your user to the docker group:
- > $ sudo usermod -aG docker $USER
-
+```shell
+$ sudo usermod -aG docker $USER
+```
  * Check if docker belongs to your user group:
- >  $ groups
- > 
- >   docker adm cdrom sudo dip plugdev lpadmin lxd sambashare foo
-
+```shell
+$ groups
+docker adm cdrom sudo dip plugdev lpadmin lxd sambashare foo
+```
 3. [*Creating custom application*][2]: to run database queri
 4. *Using* [*psycorpg2*][3] database adapter to connect app to PostgreSQL database
 5. [*Configure import*][4] requirements for custom application
@@ -62,7 +64,7 @@ $ docker tag docker_postgres_app valknutt/docker_postgres_psycorpg2:v1.0
 
 12. login to DockerHUB from terminal:
 ```shell
-$ docker login --username valknutt --pasword *********
+$ docker login --username ******** --pasword *********
 ```
 13. [*Pushing image to DockerHUB*][8]:
 ```shell
@@ -79,8 +81,7 @@ $ docker images prune
 16. Delete unused images if needed
 ```shell
 $ docker images
- >
- > $ docker rmi image_id 
+$ docker rmi image_id 
 ```
 
 [1]:https://docs.docker.com/engine/install/ubuntu/
