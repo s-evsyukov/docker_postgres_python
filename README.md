@@ -47,33 +47,41 @@ Show those that are more expensive than 5000*
     * `Docker-compose` will create default network to provide connection between application.
    We need to specify only ports to make application available from host.
 9. Building image and running container with `docker-compose`:
- > $ docker-compose up --build
-
+```shell
+ $ docker-compose up --build
+```
 9. Shutting down container:
- > $ docker-compose down --volumes
-
+```shell
+$ docker-compose down --volumes
+```
 10. Renaming image and adding version tag:
- > $ docker tag docker_postgres_app valknutt/docker_postgres_psycorpg2:v1.0
-
+```shell 
+$ docker tag docker_postgres_app valknutt/docker_postgres_psycorpg2:v1.0
+```
 11. Creating repository with name *docker_postgres_psycorpg2* on `DockerHUB`
 
 12. login to DockerHUB from terminal:
- > $ docker login --username valknutt --pasword *********
-
+```shell
+$ docker login --username valknutt --pasword *********
+```
 13. [*Pushing image to DockerHUB*][8]:
- > $ docker push valknutt/docker_postgres_psycorpg2:v1.0
-
+```shell
+$ docker push valknutt/docker_postgres_psycorpg2:v1.0
+```
 14. Cleaning local Docker containers
- > $ docker container prune
-
+```shell 
+$ docker container prune
+```
 15. Cleaning local Docker images
- > $ docker images prune
-
+```shell 
+$ docker images prune
+```
 16. Delete unused images if needed
- > $ docker images
+```shell
+$ docker images
  >
  > $ docker rmi image_id 
-
+```
 
 [1]:https://docs.docker.com/engine/install/ubuntu/
 [2]:https://github.com/Amboss/docker_postgres_python/blob/master/app/main.py
