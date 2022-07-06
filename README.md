@@ -25,10 +25,12 @@ Show those that are more expensive than 5000*
 
 2. Configure Docker access:
  * add docker to group
+ 
 [source, bash]
 ----
 $ sudo groupadd docker 
 ----
+
  * add your user to the docker group:
 ```shell
 $ sudo usermod -aG docker $USER
