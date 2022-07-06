@@ -2,7 +2,7 @@
 
 ---
 ### Skills and tools:
-`Docker` `Docker-compose` `PostgreSQL` `Adminer` `Python` `Pscorpg2`
+`Docker` `Docker-compose` `PostgreSQL` `Adminer` `Python` `Pscorpg2` `DockerHUB`
 
 ---
 ### Task: Initiate Docker-compose container with PostgreSQL 
