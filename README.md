@@ -26,20 +26,23 @@ Show those that are more expensive than 5000*
 2. Configure Docker access:
  * add docker to group
  
-[source, bash]
-----
+```shell
 $ sudo groupadd docker 
-----
+```
 
  * add your user to the docker group:
+ 
 ```shell
 $ sudo usermod -aG docker $USER
 ```
+
  * Check if docker belongs to your user group:
+ 
 ```shell
 $ groups
 docker adm cdrom sudo dip plugdev lpadmin lxd sambashare foo
 ```
+
 3. [*Creating custom application*][2]: to run database queri
 4. *Using* [*psycorpg2*][3] database adapter to connect app to PostgreSQL database
 5. [*Configure import*][4] requirements for custom application
@@ -52,36 +55,51 @@ docker adm cdrom sudo dip plugdev lpadmin lxd sambashare foo
     * `Docker-compose` will create default network to provide connection between application.
    We need to specify only ports to make application available from host.
 9. Building image and running container with `docker-compose`:
+
 ```shell
  $ docker-compose up --build
 ```
+
 9. Shutting down container:
+
 ```shell
 $ docker-compose down --volumes
 ```
+
 10. Renaming image and adding version tag:
+
 ```shell 
 $ docker tag docker_postgres_app valknutt/docker_postgres_psycorpg2:v1.0
 ```
+
 11. Creating repository with name *docker_postgres_psycorpg2* on `DockerHUB`
 
 12. login to DockerHUB from terminal:
+
 ```shell
 $ docker login --username ******** --pasword *********
 ```
+
 13. [*Pushing image to DockerHUB*][8]:
+
 ```shell
 $ docker push valknutt/docker_postgres_psycorpg2:v1.0
 ```
+
 14. Cleaning local Docker containers
+
 ```shell 
 $ docker container prune
 ```
+
 15. Cleaning local Docker images
+
 ```shell 
 $ docker images prune
 ```
+
 16. Delete unused images if needed
+
 ```shell
 $ docker images
 $ docker rmi image_id 
