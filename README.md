@@ -106,11 +106,11 @@ $ docker rmi image_id
 ```
 
 [1]:https://docs.docker.com/engine/install/ubuntu/
-[2]:https://github.com/Amboss/docker_postgres_python/blob/master/app/main.py
+[2]:https://github.com/s-evsyukov/docker_postgres_python/blob/master/app/main.py
 [3]:https://www.psycopg.org/docs/
-[4]:https://github.com/Amboss/docker_postgres_python/blob/master/app/requirements.txt
-[5]:https://github.com/yugabyte/yugabyte-db/blob/master/sample/northwind_data.sql
-[6]:https://github.com/Amboss/docker_postgres_python/blob/master/Dockerfile
-[7]:https://github.com/Amboss/docker_postgres_python/blob/master/docker-compose.yaml
+[4]:https://github.com/s-evsyukov/docker_postgres_python/blob/master/app/requirements.txt
+[5]:https://github.com/s-evsyukov/docker_postgres_python/blob/master/db/northwind.sql
+[6]:https://github.com/s-evsyukov/docker_postgres_python/blob/master/Dockerfile
+[7]:https://github.com/s-evsyukov/docker_postgres_python/blob/master/docker-compose.yaml
 [8]:https://hub.docker.com/repository/docker/valknutt/docker_postgres_psycopg2
 
